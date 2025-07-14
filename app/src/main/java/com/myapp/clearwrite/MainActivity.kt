@@ -16,7 +16,7 @@ import android.view.View
 
 class MainActivity : AppCompatActivity() {
 
-    private val geminiApiKey = "AIzaSyCpoHThPzlwk5bJttYXSeWWtXd6ww-Z8jo" // 🔐 Replace with your API key
+    private val geminiApiKey = "" // 
     var result=""
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity() {
                         val response = generativeModel.generateContent(prompt)
                         val result = response.text ?: "No response from AI."
 
-                        // Switch to Main thread to update UI
                         withContext(Dispatchers.Main) {
                             outputText.text = result.trim()
                             copyButton.visibility = View.VISIBLE
